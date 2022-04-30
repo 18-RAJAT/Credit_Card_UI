@@ -1,0 +1,283 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,200;0,300;0,400;1,200;1,400&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@500&display=swap');
+*{
+    margin :0;
+    padding :0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+body{
+    overflow: hidden;
+
+}
+section{
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: #1c1c25;
+}
+h3
+{
+    background-color: rgb(194, 31, 31);
+}
+section::before{
+    content: '';
+    position: absolute;
+    bottom: -40%;
+    left: 40%;
+    width: 600px;
+    height: 600px;
+    background:linear-gradient(#f00 ,#f0f);
+    border-radius: 50%;
+}
+.card{
+    position: relative;
+    width: 508px;
+    height: 314px;
+    transform-style: preserve-3d;
+    perspective: 500px;
+
+}
+.card .face{
+    position:absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    box-shadow:  0 15px 35px rgba(0,0,0,0.5);
+    border-radius: 15px;
+    background: rgba(255 ,255, 255, 0.05);
+    backdrop-filter: blur(10px);
+    transform-style: preserve-3d;
+    transition: 1s;
+    backface-visibility: hidden;
+}
+.card:hover .face.front{
+    transform: rotateY(180deg);
+}
+.card .face.back{
+    transform: rotateY(180deg);
+}
+.card:hover .face.back{
+    transform: rotateY(360deg);
+}
+.card .face.front::before{
+    content: '';
+    position: absolute;
+    bottom:40px;
+    right:40px;
+    width:60px;
+    height: 60px;
+    background:#fff;
+    border-radius:50%;
+    opacity: 0.5;
+}
+.card .face.front::after{
+    content: '';
+    position: absolute;
+    bottom:40px;
+    right:80px;
+    width:60px;
+    height: 60px;
+    background:#fff;
+    border-radius: 50%;
+    opacity: 0.7;
+}
+.card .face.front .debit{
+    position: absolute;
+    left: 2px;
+    top: 5px;
+    right: 5px;
+    color:#fff;
+    font-weight: 400;
+    background-color: rgb(122, 29, 29);
+}
+
+h4.name{
+    position: absolute;
+    right: 10px;
+    top: 40px;
+    color: white;
+}
+ .card .face.front .bank{
+    position: absolute;
+    right:5px;
+    top: 5px;
+    right: 5px;
+    color:#fff;
+    font-weight: 400;
+    border-radius: 1px;
+    background-color: rgb(122, 29, 29);
+}
+
+.card .face.front .chip{
+    position: absolute;
+    top: 65px;
+    left: 50px;
+    max-width: 120px;
+}
+
+.card .face.front .logo{
+    position: absolute;
+    top: 70;
+    right: 30px;
+    bottom: 3px;
+    max-width: 100px;
+}
+h4.new{
+    position: absolute;
+    right: 10px;
+    bottom:-4px;
+    color: white;
+    font-style: italic;
+}
+
+
+.card .face.front .number{
+    position: absolute;
+    bottom: 135px;
+    left: 40px;
+    color: #fff;
+    font-weight: 500;
+    letter-spacing: 6px;
+    font-size: 18px;
+    text-shadow: 0 2px 1px #0005;
+    font-family: 'orbitron',sans-serif;
+}
+.card .face.front .valid{
+    position: absolute;
+    bottom: 80px;
+    left: 40px;
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight:300;
+    line-height: 1em;
+    font-size: 18px;
+    text-align: right;
+}
+
+/* h1.name{
+    position:fixed;
+} */
+.card .face.front .valid span:last-child{
+    margin-left: 20px;
+    font-weight:400;
+    letter-spacing: 2px;
+    font-size: 16px;
+}
+
+.card .face.front .cardHolder{
+    position: absolute;
+    bottom: 10px;
+    left: 10px;
+    color: #fff;
+    font-weight: 300;
+    font-size: 16px;
+    
+}
+.card .face.back .blackbar{
+    position: absolute;
+    top: 40px;
+    width: 508px;
+    height: 60px;
+    background: #000;
+
+}
+
+.card .face.back .ccvtext{
+    position: absolute;
+    top: 120px;
+    left: 30px;   
+}
+.card .face.back .ccvtext h5{
+    color: #fff;
+    font-weight: 400;
+    font-size: 12px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+.card .face.back .ccvtext .whitebar{
+    position:relative;
+    width: 400px;
+    height: 40px;
+    background: #fff;
+    margin-top: 5px;
+}
+
+.card .face.back .ccvtext .cvv{
+    position:relative;
+    top: -35px;
+    left: 395px;
+    background: rgb(255, 255, 255);
+    color: #111;
+    width: 50px;
+    height: 30px;
+    font-weight: 600;
+    letter-spacing: 3px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.card .face.back .text{
+    position: absolute;
+    bottom: 30px;
+    left: 30px;
+    color: #fff;
+    font-size: 10px;
+    font-weight: 300;
+    line-height: 1.4em;
+}
+
+h5.sign{
+    position: absolute;
+    bottom: 10px;
+    left:3px;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+h5.sign1{
+    position: absolute;
+    bottom: 10px;
+    right:112px
+}
+
+h6.number{
+    position: absolute;
+    top: -110px;
+    left:-20px;
+    color: white;
+}
+
+h5.textar{
+    position: absolute;
+    top:-110px;
+    right:-70px;
+    color: white;
+}
+
+h2.numberback{
+    position: absolute;
+    bottom: -20px;
+    left:20px;
+    color: rgba(80, 80, 80, 0.308);
+}
+
+.card .face.back .signature{
+    position: absolute;
+    top: 70;
+    left: 30px;
+    bottom: 8px;
+    max-width: 100px;
+}
+
+@media only screen and (max-width: 768px) {
+    /* For mobile phones: */
+    [class*="col-"] {
+      width: 100%;
+      
+    }
+  }
